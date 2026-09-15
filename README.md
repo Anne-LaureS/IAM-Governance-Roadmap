@@ -90,9 +90,17 @@ tendance dans le temps :
 
 ![SoD Violations](https://img.shields.io/badge/Violations%20SoD-3-orange?style=for-the-badge)
 ![Rôles alibi](https://img.shields.io/badge/R%C3%B4les%20alibi-12-0d1117?style=for-the-badge)
-![Taux de traitement](https://img.shields.io/badge/Taux%20de%20traitement%20campagne-22%25-orange?style=for-the-badge)
 ![Accès révoqués](https://img.shields.io/badge/Acc%C3%A8s%20r%C3%A9voqu%C3%A9s-3-0d1117?style=for-the-badge)
 ![JML succès](https://img.shields.io/badge/JML%20taux%20de%20succ%C3%A8s-100%25-2ea44f?style=for-the-badge)
+
+Répartition de la campagne pilote (32 lignes) :
+
+```mermaid
+pie title Décisions de la campagne de recertification
+    "Approuvé (4)" : 4
+    "Révoqué (3)" : 3
+    "Non traité (25)" : 25
+```
 
 ## ⚠️ Risques & dépendances
 
