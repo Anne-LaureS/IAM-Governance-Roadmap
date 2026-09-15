@@ -76,9 +76,6 @@ d'authentification notables, décisions à arbitrer (ex: nouvelle règle SoD pro
 
 ## 📊 Indicateurs (KPIs)
 
-Chaque indicateur ci-dessous est directement calculable à partir des sorties déjà produites par
-les scripts existants — pas des métriques inventées pour l'exercice :
-
 | Indicateur | Source |
 |---|---|
 | Nombre de violations SoD détectées / résolues | `SoD_Violations.csv` (IAM-Access-Recertification), suivi d'une campagne à l'autre |
@@ -87,6 +84,15 @@ les scripts existants — pas des métriques inventées pour l'exercice :
 | Volume d'accès révoqués par campagne | `Remediation_Actions.csv` (IAM-Access-Recertification) |
 | Volume de Joiners/Movers/Leavers traités, taux de succès | `JML_Run_Report.csv` (IAM-JML-Lifecycle) |
 | Couverture des scénarios de panne d'authentification documentés | Nombre de scénarios du runbook (`procedure-debug-bind.md`, `procedure-debug-sso.md`) effectivement adoptés par le support |
+
+**Snapshot du pilote** — un seul cycle exécuté à ce stade, donc un instantané, pas encore une
+tendance dans le temps :
+
+![SoD Violations](https://img.shields.io/badge/Violations%20SoD-3-orange?style=for-the-badge)
+![Rôles alibi](https://img.shields.io/badge/R%C3%B4les%20alibi-12-0d1117?style=for-the-badge)
+![Taux de traitement](https://img.shields.io/badge/Taux%20de%20traitement%20campagne-22%25-orange?style=for-the-badge)
+![Accès révoqués](https://img.shields.io/badge/Acc%C3%A8s%20r%C3%A9voqu%C3%A9s-3-0d1117?style=for-the-badge)
+![JML succès](https://img.shields.io/badge/JML%20taux%20de%20succ%C3%A8s-100%25-2ea44f?style=for-the-badge)
 
 ## ⚠️ Risques & dépendances
 
