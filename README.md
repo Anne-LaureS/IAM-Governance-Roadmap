@@ -47,7 +47,7 @@ mindmap
 
 | Phase | Objectif | Livrable technique | Sortie de phase |
 |---|---|---|---|
-| **0. Cadrage** | Obtenir un sponsor, définir le périmètre pilote, formaliser les premières règles SoD avec le métier | — | Sponsor identifié, périmètre pilote validé, 1<sup>ère</sup> règle SoD écrite avec un propriétaire d'application |
+| **0. Cadrage** | Obtenir un sponsor (RSSI/DSI), définir le périmètre pilote, formaliser les premières règles SoD avec le métier | — | Sponsor identifié, périmètre pilote validé, 1<sup>ère</sup> règle SoD écrite avec un propriétaire d'application |
 | **1. Visibilité** | Savoir qui a accès à quoi, sans supposition | [LDAP-App-Role-Audit](https://github.com/Anne-LaureS/LDAP-App-Role-Audit) | Export d'audit couvrant 100% du périmètre pilote |
 | **2. Gouvernance** | Détecter les cumuls à risque, nettoyer les rôles inutilisés, faire arbitrer les propriétaires d'accès | [IAM-Access-Recertification](https://github.com/Anne-LaureS/IAM-Access-Recertification) | 1<sup>ère</sup> campagne de recertification bouclée, violations SoD ramenées à zéro sur le pilote |
 | **3. Automatisation** | Ne plus dépendre d'une action manuelle pour créer, modifier ou couper un accès | [IAM-JML-Lifecycle](https://github.com/Anne-LaureS/IAM-JML-Lifecycle) | Cycle Joiner/Mover/Leaver exécuté sans intervention manuelle sur le périmètre pilote |
@@ -64,7 +64,7 @@ d'accès.
 
 | Rôle | Responsabilité |
 |---|---|
-| Sponsor (CISO/DSI) | Arbitrage final, priorisation, déblocage des ressources |
+| RSSI / Responsable DSI (Sponsor) | Arbitrage final, priorisation, déblocage des ressources |
 | Chef de projet IAM | Pilotage du planning, animation du comité, reporting KPIs |
 | Propriétaires d'application | Décision Approve/Revoke en campagne de recertification, validation des règles SoD de leur périmètre |
 | Équipe IAM | Exécution technique (audit, campagnes, JML, debug auth) |
