@@ -17,9 +17,10 @@ collaborateur ne se traduit pas systématiquement par la révocation de ses acc�
 risque de sécurité, un point de non-conformité récurrent en audit, et une charge manuelle
 croissante pour l'IT.
 
-Ce programme referme cette boucle en 4 phases : **savoir** qui a accès à quoi, **décider** ce
-qui doit changer, **exécuter** ce changement automatiquement, et **fiabiliser** la porte
-d'entrée (authentification) sur laquelle tout le reste s'appuie.
+Ce programme referme cette boucle en 5 phases : **savoir** qui a accès à quoi, **décider** ce
+qui doit changer, **exécuter** ce changement automatiquement, **maîtriser dans le temps** les
+accès à privilège, et **fiabiliser** la porte d'entrée (authentification) sur laquelle tout le
+reste s'appuie.
 
 ## 🗺️ Vue d'ensemble
 
@@ -37,6 +38,9 @@ mindmap
       IAM-JML-Lifecycle
       Joiner / Mover / Leaver
       Gestion du matériel
+    PAM
+      IAM-JIT-PAM
+      Accès juste-à-temps
     Authentification
       Okta-SSO-Debug-Lab
       AD-LDAP-Bind-Debug-Lab
@@ -51,12 +55,13 @@ mindmap
 | **1. Visibilité** | Savoir qui a accès à quoi, sans supposition | [LDAP-App-Role-Audit](https://github.com/Anne-LaureS/LDAP-App-Role-Audit) | Export d'audit couvrant 100% du périmètre pilote |
 | **2. Gouvernance** | Détecter les cumuls à risque, nettoyer les rôles inutilisés, faire arbitrer les propriétaires d'accès | [IAM-Access-Recertification](https://github.com/Anne-LaureS/IAM-Access-Recertification) | 1<sup>ère</sup> campagne de recertification bouclée, violations SoD ramenées à zéro sur le pilote |
 | **3. Automatisation** | Ne plus dépendre d'une action manuelle pour créer, modifier ou couper un accès | [IAM-JML-Lifecycle](https://github.com/Anne-LaureS/IAM-JML-Lifecycle) | Cycle Joiner/Mover/Leaver exécuté sans intervention manuelle sur le périmètre pilote |
-| **4. Authentification** | Fiabiliser et documenter le diagnostic de la porte d'entrée, moderne et legacy | [Okta-SSO-Debug-Lab](https://github.com/Anne-LaureS/Okta-SSO-Debug-Lab), [AD-LDAP-Bind-Debug-Lab](https://github.com/Anne-LaureS/AD-LDAP-Bind-Debug-Lab) | Runbooks de debug adoptés par le support N2, temps de résolution d'incident d'auth réduit |
-| **5. Pilotage continu** | Maintenir la gouvernance dans la durée, pas juste au lancement | Comité de pilotage + KPIs (voir plus bas) | Cycle de recertification récurrent, KPIs suivis en continu |
+| **4. PAM** | Maîtriser les accès à privilège dans la durée, pas de façon permanente | [IAM-JIT-PAM](https://github.com/Anne-LaureS/IAM-JIT-PAM) | Accès juste-à-temps opérationnel sur au moins un groupe à privilège du périmètre pilote |
+| **5. Authentification** | Fiabiliser et documenter le diagnostic de la porte d'entrée, moderne et legacy | [Okta-SSO-Debug-Lab](https://github.com/Anne-LaureS/Okta-SSO-Debug-Lab), [AD-LDAP-Bind-Debug-Lab](https://github.com/Anne-LaureS/AD-LDAP-Bind-Debug-Lab) | Runbooks de debug adoptés par le support N2, temps de résolution d'incident d'auth réduit |
+| **6. Pilotage continu** | Maintenir la gouvernance dans la durée, pas juste au lancement | Comité de pilotage + KPIs (voir plus bas) | Cycle de recertification récurrent, KPIs suivis en continu |
 
 Les phases 1 à 3 sont séquentielles (chacune dépend des données produites par la précédente) ;
-la phase 4 est mobilisable en parallèle dès le cadrage, puisqu'elle ne dépend pas de l'audit
-d'accès.
+les phases 4 et 5 sont mobilisables en parallèle dès le cadrage, puisqu'elles ne dépendent pas
+de l'audit d'accès.
 
 ## 👥 Gouvernance du programme
 
@@ -83,6 +88,7 @@ d'authentification notables, décisions à arbitrer (ex: nouvelle règle SoD pro
 | Taux de complétion d'une campagne de recertification | Lignes traitées (Approve/Revoke) ÷ total, dans le résumé de `Complete-CertificationCampaign.ps1` |
 | Volume d'accès révoqués par campagne | `Remediation_Actions.csv` (IAM-Access-Recertification) |
 | Volume de Joiners/Movers/Leavers traités, taux de succès | `JML_Run_Report.csv` (IAM-JML-Lifecycle) |
+| Nombre d'accès à privilège actifs / expirés, durée moyenne accordée | `JIT_Access_Ledger.csv` (IAM-JIT-PAM) |
 | Couverture des scénarios de panne d'authentification documentés | Nombre de scénarios du runbook (`procedure-debug-bind.md`, `procedure-debug-sso.md`) effectivement adoptés par le support |
 
 **Snapshot du pilote** — un seul cycle exécuté à ce stade, donc un instantané, pas encore une
