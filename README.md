@@ -41,6 +41,7 @@ mindmap
     PAM
       IAM-JIT-PAM
       Accès juste-à-temps
+      Coffre-fort de secrets
     Authentification
       Okta-SSO-Debug-Lab
       AD-LDAP-Bind-Debug-Lab
@@ -55,7 +56,7 @@ mindmap
 | **1. Visibilité** | Savoir qui a accès à quoi, sans supposition | [LDAP-App-Role-Audit](https://github.com/Anne-LaureS/LDAP-App-Role-Audit) | Export d'audit couvrant 100% du périmètre pilote |
 | **2. Gouvernance** | Détecter les cumuls à risque, nettoyer les rôles inutilisés, faire arbitrer les propriétaires d'accès | [IAM-Access-Recertification](https://github.com/Anne-LaureS/IAM-Access-Recertification) | 1<sup>ère</sup> campagne de recertification bouclée, violations SoD ramenées à zéro sur le pilote |
 | **3. Automatisation** | Ne plus dépendre d'une action manuelle pour créer, modifier ou couper un accès | [IAM-JML-Lifecycle](https://github.com/Anne-LaureS/IAM-JML-Lifecycle) | Cycle Joiner/Mover/Leaver exécuté sans intervention manuelle sur le périmètre pilote |
-| **4. PAM** | Maîtriser les accès à privilège dans la durée, pas de façon permanente | [IAM-JIT-PAM](https://github.com/Anne-LaureS/IAM-JIT-PAM) | Accès juste-à-temps opérationnel sur au moins un groupe à privilège du périmètre pilote |
+| **4. PAM** | Maîtriser les accès à privilège dans la durée (accès temporaire) et les secrets partagés (stockage, rotation) | [IAM-JIT-PAM](https://github.com/Anne-LaureS/IAM-JIT-PAM) | Accès juste-à-temps opérationnel + au moins un secret de compte de service géré (stocké, retiré, tourné) sur le périmètre pilote |
 | **5. Authentification** | Fiabiliser et documenter le diagnostic de la porte d'entrée, moderne et legacy | [Okta-SSO-Debug-Lab](https://github.com/Anne-LaureS/Okta-SSO-Debug-Lab), [AD-LDAP-Bind-Debug-Lab](https://github.com/Anne-LaureS/AD-LDAP-Bind-Debug-Lab) | Runbooks de debug adoptés par le support N2, temps de résolution d'incident d'auth réduit |
 | **6. Pilotage continu** | Maintenir la gouvernance dans la durée, pas juste au lancement | Comité de pilotage + KPIs (voir plus bas) | Cycle de recertification récurrent, KPIs suivis en continu |
 
@@ -89,6 +90,7 @@ d'authentification notables, décisions à arbitrer (ex: nouvelle règle SoD pro
 | Volume d'accès révoqués par campagne | `Remediation_Actions.csv` (IAM-Access-Recertification) |
 | Volume de Joiners/Movers/Leavers traités, taux de succès | `JML_Run_Report.csv` (IAM-JML-Lifecycle) |
 | Nombre d'accès à privilège actifs / expirés, durée moyenne accordée | `JIT_Access_Ledger.csv` (IAM-JIT-PAM) |
+| Nombre de retraits de secrets, fréquence de rotation | `Vault_Checkout_Ledger.csv`, `LastRotated` dans `Vault.json` (IAM-JIT-PAM) |
 | Couverture des scénarios de panne d'authentification documentés | Nombre de scénarios du runbook (`procedure-debug-bind.md`, `procedure-debug-sso.md`) effectivement adoptés par le support |
 
 **Snapshot du pilote** — un seul cycle exécuté à ce stade, donc un instantané, pas encore une
