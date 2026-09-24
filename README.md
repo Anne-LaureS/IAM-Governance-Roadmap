@@ -85,6 +85,7 @@ d'authentification notables, décisions à arbitrer (ex: nouvelle règle SoD pro
 | Indicateur | Source |
 |---|---|
 | Nombre de violations SoD détectées / résolues | `SoD_Violations.csv` (IAM-Access-Recertification), suivi d'une campagne à l'autre |
+| Comptes dormants, orphelins, leavers encore actifs, désactivés avec accès | `Dormant_Accounts.csv` (IAM-Access-Recertification) |
 | Nombre de rôles "alibi" identifiés / nettoyés | `Alibi_Roles_Candidates.csv` (IAM-Access-Recertification) |
 | Taux de complétion d'une campagne de recertification | Lignes traitées (Approve/Revoke) ÷ total, dans le résumé de `Complete-CertificationCampaign.ps1` |
 | Volume d'accès révoqués par campagne | `Remediation_Actions.csv` (IAM-Access-Recertification) |
@@ -112,6 +113,7 @@ initial (6 lignes traitées, 6 succès).
 | Candidats rôles alibi | 12 | 24 |
 | Lignes de la campagne | 32 | 166 |
 | Révocations produites | 3 | 15 |
+| Comptes à risque (dormants, orphelins, leavers actifs, désactivés avec accès) | non mesuré | 7 |
 
 Répartition de la campagne du lab enrichi (166 lignes) :
 
