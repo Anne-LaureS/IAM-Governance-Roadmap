@@ -8,6 +8,8 @@ Le volet pilotage du portfolio IAM : comment un programme de gouvernance des acc
 construit et se pilote en entreprise, phase par phase — avec, pour chaque phase, l'outillage
 technique réellement construit et testé pour la livrer (pas une maquette théorique).
 
+📈 **[Voir le dashboard Access Risk en ligne](https://anne-laures.github.io/IAM-Governance-Roadmap/)** — indicateurs calculés automatiquement depuis les sorties des outils du portfolio.
+
 ## 📋 Résumé exécutif
 
 Sans gouvernance IAM structurée, une organisation accumule des accès non maîtrisés : personne
@@ -25,6 +27,7 @@ reste s'appuie.
 ## 🗺️ Vue d'ensemble
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#dbeafe","primaryTextColor":"#1f2328","primaryBorderColor":"#93c5fd","lineColor":"#8c959f","cScale0":"#bfdbfe","cScale1":"#bbf7d0","cScale2":"#fde68a","cScale3":"#fbcfe8","cScale4":"#c7d2fe","cScale5":"#ddd6fe","cScaleLabel0":"#1f2328","cScaleLabel1":"#1f2328","cScaleLabel2":"#1f2328","cScaleLabel3":"#1f2328","cScaleLabel4":"#1f2328","cScaleLabel5":"#1f2328"}}}%%
 mindmap
   root((Programme<br/>IAM))
     Visibilité
@@ -118,6 +121,7 @@ initial (6 lignes traitées, 6 succès).
 Répartition de la campagne du lab enrichi (166 lignes) :
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"pie1":"#2da44e","pie2":"#e5534b","pie3":"#adb5bd","pieTitleTextColor":"#6e7781","pieSectionTextColor":"#1f2328","pieLegendTextColor":"#6e7781","pieStrokeColor":"#ffffff","pieOuterStrokeColor":"#ffffff","pieStrokeWidth":"2px","pieOpacity":"1"}}}%%
 pie title Décisions de la campagne de recertification
     "Approuvé (14)" : 14
     "Révoqué (15)" : 15
