@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Lab initial",
+    "date": "2026-09-15",
+    "source": "relevé dans l'historique git d'IAM-Access-Recertification (commit 0282773)",
+    "applications": 8,
+    "people": 21,
+    "sodViolations": 3,
+    "alibiRoles": 12,
+    "campaignLines": 32,
+    "revocations": 3,
+    "riskAccounts": null
+  },
+  {
+    "label": "Lab enrichi",
+    "date": "2026-09-24",
+    "source": "calculé par Get-RiskMetrics.ps1",
+    "applications": 20,
+    "people": 92,
+    "sodViolations": 14,
+    "alibiRoles": 24,
+    "campaignLines": 166,
+    "revocations": 15,
+    "riskAccounts": 7
+  }
+]

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IAM Access Risk — tableau de bord</title>
+<meta name="description" content="Tableau de bord du risque d'accès IAM : violations SoD, rôles alibi, comptes dormants et orphelins, campagne de recertification.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="page-header">
+  <div class="wrap">
+    <p class="eyebrow">IAM Governance Roadmap</p>
+    <h1>Access Risk</h1>
+    <p class="lead" id="scope-line">Chargement des indicateurs…</p>
+    <p class="notice">Données de lab (annuaire Active Directory de démonstration) — les personnes et comptes cités sont fictifs.</p>
+  </div>
+</header>
+
+<main class="wrap" id="app" hidden>
+
+  <section aria-labelledby="h-kpis">
+    <h2 id="h-kpis" class="sr-only">Indicateurs clés</h2>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section class="card" aria-labelledby="h-compare">
+    <h2 id="h-compare">Deux instantanés, deux périmètres</h2>
+    <p class="hint">Le lab initial a servi à valider chaque outil séparément ; le lab enrichi les éprouve ensemble sur des cas réalistes. Les périmètres ne sont pas comparables tels quels : ce n'est pas une tendance dans le temps.</p>
+    <div class="table-wrap"><table id="compare"></table></div>
+  </section>
+
+  <div class="grid-2">
+    <section class="card" aria-labelledby="h-campaign">
+      <h2 id="h-campaign">Campagne de recertification</h2>
+      <div class="donut-row">
+        <div id="donut"></div>
+        <ul class="legend" id="campaign-legend"></ul>
+      </div>
+      <p class="hint" id="campaign-hint"></p>
+    </section>
+
+    <section class="card" aria-labelledby="h-accounts">
+      <h2 id="h-accounts">Comptes à risque par signal</h2>
+      <div id="account-bars" class="bars"></div>
+      <div class="chips" id="severity-chips" aria-label="Répartition par gravité"></div>
+    </section>
+  </div>
+
+  <section class="card" aria-labelledby="h-sod">
+    <h2 id="h-sod">Violations de séparation des tâches (SoD)</h2>
+    <div id="sod-bars" class="bars"></div>
+    <details>
+      <summary>Voir le détail des <span id="sod-count"></span> violations</summary>
+      <label class="filter">Filtrer <input type="search" id="sod-filter" placeholder="personne ou règle"></label>
+      <div class="table-wrap"><table id="sod-table"></table></div>
+    </details>
+  </section>
+
+  <section class="card" aria-labelledby="h-risk">
+    <h2 id="h-risk">Détail des comptes à risque</h2>
+    <label class="filter">Filtrer <input type="search" id="risk-filter" placeholder="compte, signal ou gravité"></label>
+    <div class="table-wrap"><table id="risk-table"></table></div>
+  </section>
+
+  <section class="card" aria-labelledby="h-alibi">
+    <h2 id="h-alibi">Rôles alibi (vides ou quasi-vides)</h2>
+    <p class="hint">Candidats à arbitrer en revue : un rôle Admin tenu par un seul administrateur est signalé par l'outil, ce n'est pas forcément une anomalie.</p>
+    <details>
+      <summary>Voir les <span id="alibi-count"></span> rôles</summary>
+      <div class="table-wrap"><table id="alibi-table"></table></div>
+    </details>
+  </section>
+
+</main>
+
+<footer class="wrap footer">
+  <p id="generated"></p>
+  <p>Sources : sorties de <a href="https://github.com/Anne-LaureS/IAM-Access-Recertification">IAM-Access-Recertification</a>, calculées par <code>scripts/Get-RiskMetrics.ps1</code>. Voir la <a href="https://github.com/Anne-LaureS/IAM-Governance-Roadmap">roadmap</a>.</p>
+</footer>
+
+<noscript><p class="wrap">Ce tableau de bord nécessite JavaScript pour afficher les indicateurs.</p></noscript>
+<script src="data/risk-metrics.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

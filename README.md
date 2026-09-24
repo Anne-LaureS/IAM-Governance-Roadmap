@@ -129,6 +129,41 @@ d'exemple : 137 lignes sur 166 restent à revoir par les propriétaires d'accès
 anomalies attendues et de l'outil qui doit chacune les trouver :
 [`Lab_ANOMALIES.md`](https://github.com/Anne-LaureS/IAM-JML-Lifecycle/blob/main/sample-data/Lab_ANOMALIES.md).
 
+## 📈 Dashboard Access Risk
+
+Les KPIs ci-dessus sont calculés automatiquement et affichés dans un tableau de bord statique :
+[`docs/index.html`](docs/index.html), sans dépendance externe (HTML, CSS et JavaScript), avec mode
+sombre et une version tableau de chaque graphique.
+
+![Dashboard Access Risk](screenshots/dashboard-access-risk.png)
+
+**Chaîne de production, sans saisie manuelle :**
+
+```
+IAM-Access-Recertification (CSV) --> scripts/Get-RiskMetrics.ps1 --> docs/data/risk-metrics.js --> docs/index.html
+```
+
+```powershell
+.\scripts\Get-RiskMetrics.ps1                        # recalcule les indicateurs depuis ..\IAM-Access-Recertification
+.\scripts\Get-RiskMetrics.ps1 -SnapshotLabel "T+1 mois" # ajoute un instantané à l'historique
+```
+
+- **Sources :** `SoD_Violations.csv`, `Alibi_Roles_Candidates.csv`, `Dormant_Accounts.csv`,
+  `CertificationCampaign.csv`, `Remediation_Actions.csv` et l'audit des rôles : tous produits par les
+  outils du portfolio. Aucun chiffre n'est saisi à la main.
+- **Historique :** `docs/data/history.json` garde un instantané par libellé. Le « lab initial » a été
+  relevé dans l'historique git d'IAM-Access-Recertification (commit du 15/09) ; le « lab enrichi » est
+  calculé par le script. Les deux périmètres diffèrent : ce n'est pas encore une tendance dans le temps,
+  mais les instantanés suivants s'ajouteront à la même table.
+- **Consulter le dashboard :** ouvrir `docs/index.html` dans un navigateur, ou activer GitHub Pages
+  (*Settings → Pages → Deploy from a branch → `main` / `/docs`*).
+
+**Ce que ce dashboard ne couvre pas, volontairement :** les indicateurs de couverture du programme
+(applications avec SSO ou provisioning, propriétaires d'application identifiés) et le suivi de
+l'exécution JML (temps moyen, matériel non restitué) ne sont produits par aucun outil du portfolio ;
+les afficher reviendrait à les inventer. La régénération automatique par GitHub Actions n'est pas encore
+en place : le calcul se lance à la main avec la commande ci-dessus.
+
 ## ⚠️ Risques & dépendances
 
 - **Qualité des données sources** : l'audit (phase 1) ne vaut que ce que vaut l'annuaire — un
