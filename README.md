@@ -137,6 +137,8 @@ sombre et une version tableau de chaque graphique.
 
 ![Dashboard Access Risk](screenshots/dashboard-access-risk.png)
 
+**[Voir le dashboard en ligne](https://anne-laures.github.io/IAM-Governance-Roadmap/)**
+
 **Chaîne de production, sans saisie manuelle :**
 
 ```
@@ -155,8 +157,8 @@ IAM-Access-Recertification (CSV) --> scripts/Get-RiskMetrics.ps1 --> docs/data/r
   relevé dans l'historique git d'IAM-Access-Recertification (commit du 15/09) ; le « lab enrichi » est
   calculé par le script. Les deux périmètres diffèrent : ce n'est pas encore une tendance dans le temps,
   mais les instantanés suivants s'ajouteront à la même table.
-- **Consulter le dashboard :** ouvrir `docs/index.html` dans un navigateur, ou activer GitHub Pages
-  (*Settings → Pages → Deploy from a branch → `main` / `/docs`*).
+- **Consulter le dashboard :** en ligne sur **https://anne-laures.github.io/IAM-Governance-Roadmap/**
+  (GitHub Pages, publié depuis `main` / `/docs`), ou en local en ouvrant `docs/index.html`.
 
 **Ce que ce dashboard ne couvre pas, volontairement :** les indicateurs de couverture du programme
 (applications avec SSO ou provisioning, propriétaires d'application identifiés) et le suivi de
