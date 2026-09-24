@@ -93,22 +93,39 @@ d'authentification notables, décisions à arbitrer (ex: nouvelle règle SoD pro
 | Nombre de retraits de secrets, fréquence de rotation | `Vault_Checkout_Ledger.csv`, `LastRotated` dans `Vault.json` (IAM-JIT-PAM) |
 | Couverture des scénarios de panne d'authentification documentés | Nombre de scénarios du runbook (`procedure-debug-bind.md`, `procedure-debug-sso.md`) effectivement adoptés par le support |
 
-**Snapshot du pilote** — un seul cycle exécuté à ce stade, donc un instantané, pas encore une
-tendance dans le temps :
+**Snapshots du pilote** — deux instantanés sur deux périmètres différents (le lab initial, puis le
+lab enrichi), donc une comparaison de taille de périmètre et pas encore une tendance dans le temps :
 
-![SoD Violations](https://img.shields.io/badge/Violations%20SoD-3-orange?style=for-the-badge)
-![Rôles alibi](https://img.shields.io/badge/R%C3%B4les%20alibi-12-0d1117?style=for-the-badge)
-![Accès révoqués](https://img.shields.io/badge/Acc%C3%A8s%20r%C3%A9voqu%C3%A9s-3-0d1117?style=for-the-badge)
-![JML succès](https://img.shields.io/badge/JML%20taux%20de%20succ%C3%A8s-100%25-2ea44f?style=for-the-badge)
+![SoD Violations](https://img.shields.io/badge/Violations%20SoD-14-orange?style=for-the-badge)
+![Rôles alibi](https://img.shields.io/badge/R%C3%B4les%20alibi-24-0d1117?style=for-the-badge)
+![Accès révoqués](https://img.shields.io/badge/Acc%C3%A8s%20r%C3%A9voqu%C3%A9s-15-0d1117?style=for-the-badge)
+![JML succès](https://img.shields.io/badge/JML%20lab%20initial-100%25-2ea44f?style=for-the-badge)
 
-Répartition de la campagne pilote (32 lignes) :
+Les 3 premiers badges portent sur le lab enrichi ; le badge JML porte sur l'échantillon du lab
+initial (6 lignes traitées, 6 succès).
+
+| Indicateur | Lab initial | Lab enrichi |
+|---|---|---|
+| Applications auditées | 8 | 20 |
+| Personnes distinctes | 21 | 92 |
+| Violations SoD | 3 | 14 |
+| Candidats rôles alibi | 12 | 24 |
+| Lignes de la campagne | 32 | 166 |
+| Révocations produites | 3 | 15 |
+
+Répartition de la campagne du lab enrichi (166 lignes) :
 
 ```mermaid
 pie title Décisions de la campagne de recertification
-    "Approuvé (4)" : 4
-    "Révoqué (3)" : 3
-    "Non traité (25)" : 25
+    "Approuvé (14)" : 14
+    "Révoqué (15)" : 15
+    "Non traité (137)" : 137
 ```
+
+Seules les lignes liées aux violations SoD (et un mover mal traité) ont été décidées, à titre
+d'exemple : 137 lignes sur 166 restent à revoir par les propriétaires d'accès. Détail des
+anomalies attendues et de l'outil qui doit chacune les trouver :
+[`Lab_ANOMALIES.md`](https://github.com/Anne-LaureS/IAM-JML-Lifecycle/blob/main/sample-data/Lab_ANOMALIES.md).
 
 ## ⚠️ Risques & dépendances
 
