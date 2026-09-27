@@ -73,10 +73,9 @@ de l'audit d'accès.
 
 | Rôle | Responsabilité |
 |---|---|
-| RSSI / Responsable DSI (Sponsor) | Arbitrage final, priorisation, déblocage des ressources |
-| Chef de projet IAM | Pilotage du planning, animation du comité, reporting KPIs |
+| RSSI | Arbitrage final, priorisation, déblocage des ressources |
 | Propriétaires d'application | Décision Approve/Revoke en campagne de recertification, validation des règles SoD de leur périmètre |
-| Équipe IAM | Exécution technique (audit, campagnes, JML, debug auth) |
+| Équipe IAM | Pilotage du planning, animation du comité, reporting KPIs, exécution technique (audit, campagnes, JML, debug auth) |
 | Audit / Conformité | Contrôle indépendant, exploitation des KPIs pour les constats d'audit |
 
 **Comité de pilotage** — cadence mensuelle recommandée. Ordre du jour type : avancement de
