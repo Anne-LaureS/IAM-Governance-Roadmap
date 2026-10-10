@@ -188,3 +188,10 @@ en place : le calcul se lance à la main avec la commande ci-dessus.
 
 Le détail technique de chaque phase (scripts, tests réels, bugs trouvés et corrigés) vit dans
 le README de son repo respectif — ce document reste au niveau pilotage.
+
+---
+
+## 📜 Licence
+
+Publié sous licence [MIT](LICENSE) © 2026 Anne-LaureS : réutilisation libre, à condition de conserver la
+mention de copyright. Fourni « tel quel », sans garantie.
