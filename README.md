@@ -3,6 +3,7 @@
 ![IAM](https://img.shields.io/badge/IAM-Program%20Governance-0d1117?style=for-the-badge)
 ![PMO](https://img.shields.io/badge/Pilotage-Programme-6e40c9?style=for-the-badge)
 ![Compliance](https://img.shields.io/badge/Compliance-SoD%20%7C%20Audit-0078D4?style=for-the-badge)
+[![Licence MIT](https://img.shields.io/badge/Licence-MIT-0d1117?style=for-the-badge)](LICENSE)
 
 Le volet pilotage du portfolio IAM : comment un programme de gouvernance des accès se
 construit et se pilote en entreprise, phase par phase — avec, pour chaque phase, l'outillage
