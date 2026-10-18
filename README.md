@@ -36,7 +36,7 @@ mindmap
     Visibilité
       "LDAP-App-Role-Audit<br/>audit rôles / annuaire"
     Gouvernance
-      "IAM-Access-Recertification<br/>recertification + midPoint (IGA)"
+      "IAM-Access-Recertification<br/>recertification + IGA midPoint"
     Automatisation
       "IAM-JML-Lifecycle<br/>joiner / mover / leaver"
     PAM
