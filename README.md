@@ -30,26 +30,21 @@ reste s'appuie.
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"primaryColor":"#dbeafe","primaryTextColor":"#1f2328","primaryBorderColor":"#93c5fd","lineColor":"#8c959f","cScale0":"#bfdbfe","cScale1":"#bbf7d0","cScale2":"#fde68a","cScale3":"#fbcfe8","cScale4":"#c7d2fe","cScale5":"#ddd6fe","cScaleLabel0":"#1f2328","cScaleLabel1":"#1f2328","cScaleLabel2":"#1f2328","cScaleLabel3":"#1f2328","cScaleLabel4":"#1f2328","cScaleLabel5":"#1f2328"}}}%%
 mindmap
-  root((Programme<br/>IAM))
+  root((Programme IAM))
+    Cadrage
+      "IAM-Governance-Roadmap<br/>synthèse et KPI"
     Visibilité
-      LDAP-App-Role-Audit
-      Qui a accès à quoi
+      "LDAP-App-Role-Audit<br/>audit rôles / annuaire"
     Gouvernance
-      IAM-Access-Recertification
-      SoD, rôles alibi
-      Campagnes de recertification
+      "IAM-Access-Recertification<br/>recertification + midPoint (IGA)"
     Automatisation
-      IAM-JML-Lifecycle
-      Joiner / Mover / Leaver
-      Gestion du matériel
+      "IAM-JML-Lifecycle<br/>joiner / mover / leaver"
     PAM
-      IAM-JIT-PAM
-      Accès juste-à-temps
-      Coffre-fort de secrets
+      "IAM-JIT-PAM<br/>accès privilégiés juste-à-temps"
     Authentification
-      Okta-SSO-Debug-Lab
-      AD-LDAP-Bind-Debug-Lab
-      Auth moderne + legacy
+      "Okta-SSO-Debug-Lab<br/>SSO / MFA Okta"
+      "AD-LDAP-Bind-Debug-Lab<br/>diagnostic AD / LDAP"
+      "Kubernetes-Kind-HA-Lab<br/>haute disponibilité K8s"
 ```
 
 ## 🛣️ Roadmap en phases
